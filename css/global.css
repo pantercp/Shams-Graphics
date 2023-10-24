@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* :root {
+    --dark: #000;
+    --light: #CCD7C5;
+    --third: #172a3a;
+} */
+
+:root {
+    --clr-light: #00A9A5;
+    --clr-dark: #092327;
+    --clr-foreground: #0B5351;
+    --clr-foreground: #c3fcf2;
+    --clr-accent: #ff7750;
+
+    --foreground: var(--clr-dark);
+    --background: var(--clr-light);
+
+    --ff-title: "Playfair Display", serif;
+    --ff-body: "Assistant", sans-serif;
+}
+
+.darkmode {
+    --clr-light: #00A9A5;
+    --clr-dark: #092327;
+    --clr-foreground: #202302;
+    --clr-foreground: #00100d;
+    --clr-accent: #ff7750;
+
+    --foreground: var(--clr-light);
+    --background: var(--clr-dark);
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--ff-body);
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* body {
+    background-color: var(--dark);
+    color: var(--light);
+} */
+
+ul {
+    list-style-type: none;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+
+/* --------Buttons-------- */
+
+button.effect {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em;
+    padding: 0.5em 1em;
+}
+
+button.effect {
+    color: var(--foreground);
+    transition: 0.25s;
+
+    &:hover,
+    &:focus {
+        cursor: pointer;
+        border-color: var(--foreground);
+        color: var(--foreground);
+    }
+}
+
+/* Animating from the bottom */
+
+button.effect.up:hover,
+button.effect.up:focus {
+  box-shadow: inset 0 -2em 0 0 var(--foreground);
+  color: var(--background);
+}
+
+/* Animate from the left */
+
+button.effect.slide:hover,
+button.effect.slide:focus {
+  box-shadow: inset 9em 0 0 0 var(--foreground);
+  color: var(--background);
+}
+
+/* --------Navigation-------- */
+
+#header {
+    border-bottom: 1px solid var(--foreground);
+}
+
+#header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header img {
+    max-height: 100px;
+}
+
+#header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#header .row-name {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
+}
+
+#header .row-name a {
+    font-size: 2rem;
+}
+
+#header .row-menu {
+    display: flex;
+    align-items: center;
+}
+
+#header .row-menu ul {
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+}
+
+#header .row-menu li {
+    margin-inline: 0.5rem;
+    font-size: 1.3rem;
+}
+
+#header .row-menu button {
+    width: 30px;
+    color: var(--foreground);
+    margin-inline: 0.5rem;
+    background-color: transparent;
+    border: none;
+}
+
+
+@media only screen and (max-width: 1300px) {
+    #header .row-menu {
+        position: absolute;
+        right: 0;
+        opacity: 0;
+        top: 0;
+        font-size: 0;
+        width: 225px;
+        display: none;
+    }
+
+    #header .row-menu ul {
+        position: absolute;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 20px;
+        width: 100%;
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    #header .row-menu li {
+        position: absolute;
+        width: 100%;
+        padding-left: 20px;
+        background-color: var(--background);
+        border-left: 1px solid;
+        border-bottom: 1px solid;
+        color: var(--foreground);
+        margin: 0;
+    }
+
+    #header .row-menu.open {
+        top: 108px;
+        font-size: 1.7rem;
+        display: block;
+        opacity: 1;
+    }
+
+    #header .row-menu.open li {
+        position: relative;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    #header img {
+        max-height: 80px;
+    }
+
+    #header .row-name a {
+        font-size: 1.5em;
+    }
+
+    #header .row-menu.open {
+        top: 88px;
+    }
+}
+
+
+/* -------------Burger------------ */
+
+.menu-btn {
+    display: none;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    z-index: 9999;
+}
+
+.burger-icon {
+    width: 30px;
+    height: 2px;
+    background: var(--foreground);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .5s ease-in-out;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: var(--foreground);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+    transition: all .3s ease-in-out;
+}
+
+.burger-icon::before {
+    transform: translateY(-10px);
+}
+
+.burger-icon::after {
+    transform: translateY(10px);
+}
+
+/* ANIMATION */
+.menu-btn.open .burger-icon {
+    transform: translateX(0px);
+    background: transparent;
+    box-shadow: none;
+}
+
+.menu-btn.open .burger-icon::before {
+    transform: rotate(-135deg) translate(0, 0);
+}
+
+.menu-btn.open .burger-icon::after {
+    transform: rotate(135deg) translate(0, 0);
+}
+
+
+@media only screen and (max-width: 1300px) {
+    .menu-btn {
+        display: flex;
+    }
+
+}
