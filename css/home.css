@@ -112,6 +112,11 @@
   row-gap: 20px;
   /* align-items: center; */
   max-width: 550px;
+  padding-left: 3rem;
+}
+
+.graphic .slide .image-wrap {
+  padding-right: 3rem;
 }
 
 .graphic .slide .text-wrap button {
@@ -120,6 +125,14 @@
 
 .graphic .slide .text-wrap p {
   font-size: 1rem;
+}
+
+.graphic .swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  z-index: 999;
+  background-color: #ccd7c558;
 }
 
 
@@ -133,6 +146,20 @@
     max-width: 250px;
     max-height: 225px;
   }
+
+  .graphic .swiper-button-next,
+  .swiper-button-prev {
+    top: 25%;
+  }
+
+  .graphic .slide .text-wrap {
+    padding-left: 0;
+  }
+
+  .graphic .slide .image-wrap {
+    padding-right: 0;
+  }
+
 }
 
 /* ----------Charity---------- */
@@ -278,7 +305,7 @@
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
   z-index: 999;
   background-color: #ccd7c558;
 }
@@ -408,7 +435,7 @@
 .swiper-button-next,
 .swiper-button-prev {
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
   z-index: 999;
   background-color: #ccd7c558;
 }
