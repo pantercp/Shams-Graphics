@@ -31,7 +31,21 @@
   font-size: 0.8rem;
 }
 
-/* ----------Testimonials---------- */
+/* ----------Artwork Header---------- */
+
+.graphics-section .section-header{
+  padding: 2rem;
+  display: flex;
+  column-gap: 30px;
+  max-width: 900px;
+  margin: 0.5rem auto;
+}
+
+.graphics-section .section-header p{
+  text-align: justify;
+}
+
+/* ----------Graphics---------- */
 
 .graphics-section {
   padding-block: 1rem 0;
