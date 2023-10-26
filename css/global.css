@@ -57,7 +57,7 @@ ul {
     list-style-type: none;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
 
@@ -100,28 +100,28 @@ button.effect.light {
 
 button.effect.up:hover,
 button.effect.up:focus {
-  box-shadow: inset 0 -2em 0 0 var(--foreground);
-  color: var(--background);
+    box-shadow: inset 0 -2em 0 0 var(--foreground);
+    color: var(--background);
 }
 
 button.effect.light.up:hover,
 button.effect.light.up:focus {
-  box-shadow: inset 0 -2em 0 0 var(--clr-light);
-  color: var(--clr-dark);
+    box-shadow: inset 0 -2em 0 0 var(--clr-light);
+    color: var(--clr-dark);
 }
 
 /* Animate from the left */
 
 button.effect.slide:hover,
 button.effect.slide:focus {
-  box-shadow: inset 9em 0 0 0 var(--foreground);
-  color: var(--background);
+    box-shadow: inset 9em 0 0 0 var(--foreground);
+    color: var(--background);
 }
 
 button.effect.light.slide:hover,
 button.effect.light.slide:focus {
-  box-shadow: inset 9em 0 0 0 var(--clr-light);
-  color: var(--clr-dark);
+    box-shadow: inset 9em 0 0 0 var(--clr-light);
+    color: var(--clr-dark);
 }
 
 /* --------Navigation-------- */
@@ -304,6 +304,90 @@ button.effect.light.slide:focus {
 @media only screen and (max-width: 1300px) {
     .menu-btn {
         display: flex;
+    }
+
+}
+
+
+/* -------------Footer------------ */
+
+.footer-section .footer-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 1.5rem;
+    border-top: 1px solid var(--foreground);
+}
+
+.footer-section .main-section {
+    text-align: center;
+}
+
+.footer-section .main-section ul {
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.footer-section .main-section .socials {
+    margin-top: 0.5rem;
+    font-size: 1.7rem;
+}
+
+.footer-section .main-section i {
+    transition: all 0.5s;
+    box-shadow: inset 0 0 0 0 var(--foreground);
+    color: var(--foreground);
+    border-radius: 5px;
+    padding: 0px;
+
+}
+
+.footer-section .main-section i:hover {
+    box-shadow: inset 0 -1.5em 0 0 var(--foreground);
+    color: var(--background);
+    padding: 2px;
+    border-radius: 5px;
+    font-size: 1.9rem;
+}
+
+.footer-section .page-list ul {
+    width: 150px;
+}
+
+.footer-section .page-list li {
+    font-size: 0.9rem;
+}
+
+.footer-section .main-section img {
+    max-height: 130px;
+}
+
+.footer-section .cjpixel {
+    text-align: center;
+    margin-block: 1rem 0.5rem;
+}
+
+@media only screen and (max-width: 700px) {
+
+    .footer-section .artwork-list {
+        order: 1;
+    }
+
+    .footer-section .legal-links {
+        order: 2;
+    }
+
+    .footer-section .footer-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .footer-section .main-section {
+        width: 100%;
+    }
+
+    .footer-section .page-list ul {
+        width: unset;
     }
 
 }

@@ -1,7 +1,8 @@
 // check for saved 'darkMode' in localStorage
 let darkMode = localStorage.getItem('darkMode'); 
 
-const LogoIm = document.querySelector('#logoIm')
+const LogoIm = document.querySelector('#logoIm');
+const LogoIm2 = document.querySelector('#logoIm2');
 
 const darkModeToggle = document.querySelector('#dark-mode-toggle');
 
@@ -10,6 +11,7 @@ const enableDarkMode = () => {
   document.body.classList.add('darkmode');
 
   LogoIm.src = "images/shams-dark-notext.png"
+  LogoIm2.src = "images/shams-dark-notext.png"
 
   // 2. Update darkMode in localStorage
   localStorage.setItem('darkMode', 'enabled');
@@ -20,6 +22,7 @@ const disableDarkMode = () => {
   document.body.classList.remove('darkmode');
 
   LogoIm.src = "images/shams-light-notext.png"
+  LogoIm2.src = "images/shams-light-notext.png"
 
   // 2. Update darkMode in localStorage 
   localStorage.setItem('darkMode', null);
